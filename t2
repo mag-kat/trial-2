@@ -1,0 +1,1 @@
+A greedy algorithm is an algorithm used to find an optimal solution for the given problem. greedy algorithm works by finding locally optimal solutions ( optimal solution for a part of the problem) of each part so show the Global optimal solution could be found.

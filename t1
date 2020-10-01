@@ -1,0 +1,33 @@
+/*A greedy algorithm is an algorithm used to find an optimal solution for the given problem. greedy algorithm works by finding locally optimal solutions ( optimal solution for a part of the problem) of each part so show the Global optimal solution could be found.*/
+
+/*Problem 1: greedy algorithm to find the minimum number of coins/ notes that could makeup to the given sum.*/
+
+/*Input: sum,
+Initialise the coins = 0
+Step 1: Find the largest denomination that can be used i.e. smaller than sum.
+Step 2: Add denomination two coins and subtract it from the Sum
+Step 3: Repeat step 2 until the sum becomes 0.
+Step 4: Print each value in coins.
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+int notes[] = { 1, 2, 5, 10, 20, 50, 100, 200, 500, 2000 };
+int n = sizeof(notes) / sizeof(notes[0]);
+void minchange(int sum){
+   vector<int> coins;
+   for (int i = n - 1; i >= 0; i--) {
+      while (sum >= notes[i]) {
+         sum -= notes[i];
+         coins.push_back(notes[i]);
+      }
+   }
+   for (int i = 0; i < coins.size(); i++)
+      cout << coins[i] << "\t";
+}
+int main(){
+   int n = 3253;
+   cout << "The minimum number of coins/notes that sum up " << n << " is \t ";
+   minchange(n);
+   return 0;
+}
